@@ -1,0 +1,226 @@
+Windows Registry Editor Version 5.00
+
+; Delete keys:
+;[-HKEY_CURRENT_USER\SomeKey]
+; Delete values:
+;[HKEY_CURRENT_USER\SomeKey]
+;"SomeValue"=-
+
+; ------------
+; CURRENT_USER
+; ------------
+
+[HKEY_CURRENT_USER\Control Panel\Accessibility]
+"DynamicScrollbars"=dword:00000001
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"ActiveWndTrackTimeout"=dword:00000000
+"AutoColorization"=dword:00000000
+"AutoEndTasks"="1"
+"BlockSendInputResets"="0"
+"CaretTimeout"=dword:00001388
+"CaretWidth"=dword:00000001
+"ClickLockTime"=dword:000004b0
+"CoolSwitchColumns"="7"
+"CoolSwitchRows"="3"
+"CursorBlinkRate"="500"
+"DockMoving"="1"
+"DragFromMaximize"="1"
+"DragFullWindows"="1"
+"DragHeight"="4"
+"DragWidth"="4"
+"FocusBorderHeight"=dword:00000001
+"FocusBorderWidth"=dword:00000001
+"FontSmoothing"="2"
+"FontSmoothingGamma"=dword:00000000
+"FontSmoothingOrientation"=dword:00000001
+"FontSmoothingType"=dword:00000002
+"ForegroundFlashCount"=dword:00000005
+"ForegroundLockTimeout"=dword:000186a0
+"HungAppTimeout"="3000"
+"ImageColor"=dword:a6ca656d
+"JPEGImportQuality"=dword:00000064
+"LastUpdated"=dword:ffffffff
+"LeftOverlapChars"="3"
+"LowLevelHooksTimeout"="4000"
+"MaxMonitorDimension"=dword:00000556
+"MaxVirtualDesktopDimension"=dword:00000556
+"MenuShowDelay"="0"
+"MouseWheelRouting"=dword:00000002
+"PaintDesktopVersion"=dword:00000000
+"Pattern Upgrade"="TRUE"
+"Pattern"=dword:00000000
+"RightOverlapChars"="3"
+"ScreenSaveActive"="1"
+"SnapSizing"="1"
+"TileWallpaper"="0"
+"TranscodedImageCount"=dword:00000001
+"UserPreferencesMask"=hex:90,32,07,80,10,00,00,00
+"WaitToKillAppTimeout"="10000"
+"WaitToKillServiceTimeout"="5000"
+"WallpaperOriginX"=dword:00000000
+"WallpaperOriginY"=dword:00000000
+"WallpaperStyle"="10"
+"WheelScrollChars"="3"
+"WheelScrollLines"="3"
+"WindowArrangementActive"="1"
+
+[HKEY_CURRENT_USER\Control Panel\Keyboard]
+"InitialKeyboardIndicators"="2147483650"
+
+[HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
+"FolderType"="NotSpecified"
+
+[HKEY_CURRENT_USER\Software\Microsoft\GameBar]
+"AllowAutoGameMode"=dword:00000001
+"AutoGameModeEnabled"=dword:00000001
+"GamePanelStartupTipIndex"=dword:00000003
+"ShowStartupPanel"=dword:00000000
+"UseNexusForGameBarEnabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Input\TIPC]
+"Enabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Siuf\Rules]
+"NumberOfSIUFInPeriod"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"RestartApps"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo]
+"Enabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\AppHost]
+"EnableWebContentEvaluation"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
+"GlobalUserDisabled"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"ContentDeliveryAllowed"=dword:00000000
+"DisableTailoredExperiencesWithDiagnosticData"=dword:00000001
+"DisableWindowsSpotlightFeatures"=dword:00000001
+"OemPreInstalledAppsEnabled"=dword:00000000
+"PreInstalledAppsEnabled"=dword:00000000
+"PreInstalledAppsEverEnabled"=dword:00000000
+"SilentInstalledAppsEnabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"DesktopLivePreviewHoverTime"=dword:00000000
+"DisablePreviewDesktop"=dword:00000000
+"DisallowShaking"=dword:00000001
+"DontPrettyPath"=dword:00000000
+"DontUsePowerShellOnWinX"=dword:00000001
+"ExtendedUIHoverTime"=dword:00002710
+"Hidden"=dword:00000002
+"HideFileExt"=dword:00000000
+"IconsOnly"=dword:00000000
+"LaunchTo"=dword:00000001
+"ListviewAlphaSelect"=dword:00000000
+"ListviewShadow"=dword:00000000
+"NavPaneExpandToCurrentFolder"=dword:00000000
+"NavPaneShowAllFolders"=dword:00000000
+"NoNetCrawling"=dword:00000001
+"PersistBrowsers"=dword:00000000
+"SeparateProcess"=dword:00000000
+"ServerAdminUI"=dword:00000000
+"ShowInfoTip"=dword:00000001
+"ShowSuperHidden"=dword:00000000
+"ShowSyncProviderNotifications"=dword:00000000
+"Start_SearchFiles"=dword:00000002
+"Start_TrackDocs"=dword:00000000
+"Start_TrackProgs"=dword:00000001
+"StoreAppsOnTaskbar"=dword:00000000
+"TaskbarAnimations"=dword:00000001
+"TaskbarGlomLevel"=dword:00000001
+"TaskbarSmallIcons"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoComplete]
+"Append Completion"="yes"
+"AutoSuggest"="yes"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\NamingTemplates]
+"ShortcutNameTemplate"="\"%s.lnk\""
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\PenWorkspace]
+"PenWorkspaceAppSuggestionsEnabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments]
+"SaveZoneInformation"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoInstrumentation"=-
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Privacy]
+"TailoredExperiencesWithDiagnosticDataEnabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
+"BackgroundAppGlobalToggle"=dword:00000000
+"BingSearchEnabled"=dword:00000000
+"CortanaConsent"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
+"AppsUseLightTheme"=dword:00000001
+"SystemUsesLightTheme"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer]
+"DisableThumbsDBOnNetworkFolders"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
+;"VisualFXSetting"=dword:00000002
+
+; -------------
+; LOCAL_MACHINE
+; -------------
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework]
+"Enable64Bit"=dword:00000001
+"OnlyUseLatestCLR"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
+"NetworkThrottlingIndex"=dword:ffffffff
+"SystemResponsiveness"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games]
+"GPU Priority"=dword:00000008
+"Priority"=dword:00000006
+"Scheduling Category"="High"
+"SFIO Priority"="High"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"AutoRestartShell"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
+"Max Cached Icons"="4096"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OptimalLayout]
+"EnableAutoLayout"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
+"SvcHostSplitThresholdInKB"=dword:5102876
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl]
+"CrashDumpEnabled"=dword:00000000
+"DisplayParameters"=dword:00000001
+"EnableLogFile"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
+"IRQ8Priority"=dword:00000001
+"Win32PrioritySeparation"=dword:00000026
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System]
+"CountOperations"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"DisablePagingExecutive"=dword:00000001
+"IoPageLockLimit"=dword:134217728
+"LargeSystemCache"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\OEM\Device\Capture]
+;"NoPhysicalCameraLED"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Maintenance]
+;"MaintenanceDisabled"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerThrottling]
+;"PowerThrottlingOff"=dword:00000001

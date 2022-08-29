@@ -1,0 +1,55 @@
+<ImageGlass>
+  <Configuration>
+    <Info description="ImageGlass Configuration file" version="4.0" />
+    <Content>
+      <Item key="IsOpenLastSeenImage" value="True" />
+      <Item key="IsShowToolbar" value="True" />
+      <Item key="AutoUpdate" value="0" />
+      <Item key="IsAllowMultiInstances" value="False" />
+      <Item key="IsPressESCToQuit" value="True" />
+      <Item key="IsConfirmationDelete" value="True" />
+      <Item key="IsDisplayBasenameOfImage" value="True" />
+      <Item key="IsShowNavigationButtons" value="True" />
+      <Item key="IsShowingHiddenImages" value="False" />
+      <Item key="IsLoopBackViewer" value="False" />
+      <Item key="IsCenterImage" value="True" />
+      <Item key="IsUseFileExplorerSortOrder" value="False" />
+      <Item key="ImageBoosterCachedCount" value="1" />
+      <Item key="IsApplyColorProfileForAll" value="False" />
+      <Item key="ColorProfile" value="sRGB" />
+      <Item key="MouseWheelAction" value="4" />
+      <Item key="MouseWheelCtrlAction" value="2" />
+      <Item key="MouseWheelShiftAction" value="3" />
+      <Item key="MouseWheelAltAction" value="1" />
+      <Item key="ZoomOptimization" value="0" />
+      <Item key="IsLoopBackSlideShow" value="False" />
+      <Item key="IsSaveAfterRotating" value="True" />
+      <Item key="PreserveModifiedDate" value="True" />
+      <Item key="IsColorPickerRGBA" value="True" />
+      <Item key="IsColorPickerHEXA" value="True" />
+      <Item key="IsColorPickerHSLA" value="True" />
+      <Item key="KeyboardActions" value="0,0;1,2;2,0;3,4;" />
+      <Item key="frmSetting.WindowsState" value="Normal" />
+      <Item key="frmMain.WindowsState" value="Maximized" />
+      <Item key="IsShowCheckedBackground" value="False" />
+      <Item key="IsShowToolBar" value="True" />
+      <Item key="IsShowThumbnailScroll" value="False" />
+      <Item key="IsWindowAlwaysOnTop" value="False" />
+      <Item key="ZoomMode" value="AutoZoom" />
+      <Item key="ZoomLockValue" value="-1" />
+      <Item key="IsShowThumbnail" value="False" />
+      <Item key="IsThumbnailHorizontal" value="True" />
+      <Item key="ThumbnailBarWidth" value="683" />
+      <Item key="IsShowColorPickerOnStartup" value="False" />
+      <Item key="ToolbarButtons" value="0,1,-1,2,3,-1,4,5,7,8,-1,15,18,17,9,22,-1,21" />
+      <Item key="LastSeenImagePath" value="" />
+      <Item key="IsCenterToolbar" value="False" />
+      <Item key="IsFullScreen" value="False" />
+      <Item key="AppVersion" value="7.0.7.26" />
+      <Item key="FirstLaunchVersion" value="5" />
+      <Item key="Theme" value="default" />
+      <Item key="IsShowWelcome" value="True" />
+      <Item key="IsNewVersionAvailable" value="False" />
+    </Content>
+  </Configuration>
+</ImageGlass>

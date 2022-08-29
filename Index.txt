@@ -1,0 +1,136 @@
+\ Components Removal Index and Know Issues
+Some packages may not exist in some versions and editions.
+Updates will roll back removals or may fail at worst.
+
+
+\ Cortana \ Breaks Start Menu and Taskbar up to 2019 versions
+Cortana
+TextPrediction
+
+\ Edge Classic \ Outdated
+Internet-Browser
+
+\ Internet Explorer \ Breaks Directx 9c web-setup, Photoshop CC and older apps
+IE-Troubleshooters
+InternetExplorer
+
+\ Internet Explorer \ Outdated
+Adobe-Flash
+FlvPropHandler
+ImageBasedSetup
+
+\ OneDrive
+OneDrive-Setup
+OfflineFiles
+
+\ Xbox Client \ Breaks Microsoft Games
+GameUX
+OneCore-Gaming
+Networking-Xboxlive
+
+\ Windows Media Player
+WindowsMediaPlayer
+Windows-MediaPlayback-OC
+Windows-MediaPlayer
+Windows-SQL-Lite
+WMPNetworkSharingService
+WPD-LegacyWmdmFeature
+
+\ Windows Photo Viewer
+PhotoBasic
+PhotoPremium
+
+\ Windows TIFF filter
+Media-Ocr
+WinOcr
+
+\ Windows Subsystem For Linux
+Lxss
+Lxss-Optional
+Lxss-Withgraphics
+
+\ Windows Virtualization
+Hyper-V
+HyperV-Guest
+
+\ Face Recognition
+Media-FaceAnalysis
+Hello-Face
+
+\ Language Features
+Languagefeatures-Ocr
+Languagefeatures-Speech
+Languagefeatures-Texttospeech
+
+\ Device Lockdown \ Fullscreen Kiosk
+AssignedAccess
+Client-EmbeddedExp
+Embedded-KeyboardFilter
+Embedded-ShellLauncher
+Embedded-UnifiedWriteFilter
+
+\ PPI Projection (Connect App)
+PPIProjection
+
+\ Projected File System
+Projfs
+
+\ Remoting Features
+RemoteAssistance-Client
+RemoteDesktop
+RemoteFx
+
+\ Remote Desktop Server \ Outdated
+Remotefx-Clientvm
+Remotefx-Graphics-Virtualization-Host
+Remotefx-HyperV-Integration
+Remotefx-VM-Setup
+Virtualization-Remotefx-User-Mode-Transport
+
+\ Remote Differential Compression
+RDC
+
+\ System Restore
+SystemRestore
+
+\ Windows Error Reporting
+ErrorReporting
+
+\ Windows Store
+OneCore-UniversalStore
+
+\ Windows To Go
+PortableWorkspaces-Creator
+
+\ Work Folders Client
+EnterpriseClientSync
+
+\ Windows Backup \ Breaks VSS providers
+Backup
+BLB-Client
+
+\ Windows Defender \ Breaks Windows Update
+DeviceGuard
+GroupPolicy
+OneCoreUAP
+HVSI
+SenseClient
+ServicingStack
+
+\ Windows Firewall \ Breaks Wi-Fi setup
+Network-Security
+Networking-MPSSVC-Rules
+
+\ Windows Mixed Reality \ Breaks DWM.exe \ DO NOT REMOVE
+Composable-PlatformExtension
+Holographic
+PerceptionDriverClient
+SpatialInteractionClient
+
+\ DO NOT REMOVE \ Breaks vital components
+AppServerClient
+ICM
+SearchEngine
+Sensors
+TabletPC
+TerminalServices
