@@ -10,6 +10,21 @@ Windows Registry Editor Version 5.00
 ; CURRENT_USER
 ; ------------
 
+[HKEY_CURRENT_USER\Console]
+"FaceName"="Consolas"
+"FontFamily"=dword:00000036
+"FontSize"=dword:000e0000
+"FontWeight"=dword:00000190
+"HistoryBufferSize"=dword:00000019
+"HistoryNoDup"=dword:00000001
+"LineSelection"=dword:00000001
+"LineWrap"=dword:00000001
+"NumberOfHistoryBuffers"=dword:00000005
+"QuickEdit"=dword:00000001
+"ScreenBufferSize"=dword:2328005a
+"ScreenColors"=dword:00000007
+"WindowSize"=dword:002d005a
+
 [HKEY_CURRENT_USER\Control Panel\Accessibility]
 "DynamicScrollbars"=dword:00000001
 
@@ -61,8 +76,8 @@ Windows Registry Editor Version 5.00
 "WallpaperOriginX"=dword:00000000
 "WallpaperOriginY"=dword:00000000
 "WallpaperStyle"="10"
-"WheelScrollChars"="3"
-"WheelScrollLines"="3"
+"WheelScrollChars"="5"
+"WheelScrollLines"="5"
 "WindowArrangementActive"="1"
 
 [HKEY_CURRENT_USER\Control Panel\Keyboard]

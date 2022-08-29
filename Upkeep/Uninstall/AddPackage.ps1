@@ -1,3 +1,6 @@
+# Microsoft Store online link generator
+# https://store.rg-adguard.net/
+
 $AppxPackage = @(
 'DesktopAppInstaller.AppxBundle'
 'NoDialCalculator.AppxBundle'

@@ -88,7 +88,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\CurrentVersion\Software Protection Platform]
 "AllowWindowsEntitlementReactivation"=dword:00000001
-"NoGenTicket"=dword:00000001
+"NoGenTicket"=-
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\Printers]
 "DisableHTTPPrinting"=dword:00000001
@@ -111,6 +111,9 @@ Windows Registry Editor Version 5.00
 "DisablePeerCachingClient"=dword:00000001
 "DisablePeerCachingServer"=dword:00000001
 "EnablePeercaching"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\CredUI]
+"DisablePasswordReveal"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
 "LimitDiagnosticLogCollection"=dword:00000001
@@ -156,6 +159,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\NetworkConnectivityStatusIndicator]
 "NoActiveProbe"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\OneDrive]
+"DisableFileSyncNGSC"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization]
 "NoLockScreen"=dword:00000001

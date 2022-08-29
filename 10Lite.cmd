@@ -86,6 +86,7 @@ for /f "tokens=2 delims=:" %%a in ('DISM /Online /Get-Packages') do (set _=%%a
 			title %~n0: !progress!%%
 )))
 title %~n0: 100%%
+
 >nul 2>&1 (
 	DISM /Online /Optimize-ProvisionedAppxPackages 
 	DISM /Online /Remove-DefaultAppAssociations
@@ -93,6 +94,7 @@ title %~n0: 100%%
 	REG add "HKLM\Software\Microsoft\Windows\CurrentVersion\SideBySide\Configuration" /v "DisableResetBase" /t "REG_DWORD" /d "0" /f
 	echo:DISM /Online /Cleanup-Image /StartComponentCleanup /ResetBase >C:\Windows\DISMCleanup.cmd
 )
+
 if %PowerOff% equ 1 shutdown.exe /t 10 /s
 endlocal
 goto :eof
