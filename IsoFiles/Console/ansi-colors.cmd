@@ -1,6 +1,7 @@
 @echo off
-title ANSI Colors //github.com/mki77
 color 0F
+mode con:cols=60 lines=30
+title ANSI Colors //github.com/mki77
 echo [7m STYLES [0m				
 echo 7;31m [7;31mInverse Red[0m			
 echo 7m [7mInverse[0m				

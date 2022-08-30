@@ -5,10 +5,7 @@
 @echo off
 set exe=VisualCppRedist_AIO_x86_x64.exe
 pushd "%Temp%"
-dir /b VisualCppRedist*.exe || (
-	curl.exe -L -o vcppredist.zip https://kutt.it/vcppredist
-	PowerShell "Expand-Archive vcppredist.zip -DestinationPath ."
-)
-rem %exe% /?
+curl.exe -L -o vcppredist.zip https://kutt.it/vcppredist
+PowerShell "Expand-Archive vcppredist.zip -DestinationPath ."
 start %exe% /aiT
 popd

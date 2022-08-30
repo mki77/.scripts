@@ -23,6 +23,7 @@ Windows Registry Editor Version 5.00
 "QuickEdit"=dword:00000001
 "ScreenBufferSize"=dword:2328005a
 "ScreenColors"=dword:00000007
+"VirtualTerminalLevel"=dword:00000001
 "WindowSize"=dword:002d005a
 
 [HKEY_CURRENT_USER\Control Panel\Accessibility]

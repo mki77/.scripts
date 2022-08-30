@@ -1,30 +1,7 @@
-$ErrorActionPreference= 'silentlycontinue'
-$Services = Get-WmiObject -Class Win32_Service
+if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process PowerShell.exe "-File `"$PSCommandPath`"" -Verb runas -WindowStyle hidden; exit}
 
-foreach ($Service in $Services) {
-
-	# Exclude if Delayed
-	$ItemProperty = Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\$($Service.Name)"
-	if ($ItemProperty.Start -eq 2 -and $ItemProperty.DelayedAutoStart -eq 1) {
-		Set-Service -Name $Service.Name -StartupType Automatic
-		continue
-	}
-
-	# Exclude if Triggered
-	if (Test-Path -Path "HKLM:\SYSTEM\CurrentControlSet\Services\$($Service.Name)\TriggerInfo\") {
-		Set-Service -Name $Service.Name -StartupType Manual
-		continue
-	}
-
-	New-Object -TypeName PSObject -Property @{
-		Status = $Service.State
-		Name = $Service.Name
-		StartMode = $Service.StartMode
-		DisplayName = $Service.DisplayName
-	}
-}
-
-$Automatic = @(
+$ErrorActionPreference = 'silentlycontinue'
+$Services = @(
 "AudioEndpointBuilder"
 "Audiosrv"
 "BFE"
@@ -37,7 +14,6 @@ $Automatic = @(
 "Dhcp"
 "Dnscache"
 "dot3svc"
-"DPS"
 "DusmSvc"
 "EventLog"
 "EventSystem"
@@ -66,6 +42,35 @@ $Automatic = @(
 "WpnUserService"
 "WwanSvc"
 )
-foreach ($Service in $Automatic) {
+foreach ($Service in $Services) {
 	Set-Service -Name $Service -StartupType Automatic
 }
+
+
+$ErrorActionPreference = 'silentlycontinue'
+$Services = Get-WmiObject -Class Win32_Service
+
+$List = foreach ($Service in $Services) {
+
+	# Exclude if Delayed
+	$ItemProperty = Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\$($Service.Name)"
+	if ($ItemProperty.Start -eq 2 -and $ItemProperty.DelayedAutoStart -eq 1) {
+		Set-Service -Name $Service.Name -StartupType Automatic
+		continue
+	}
+
+	# Exclude if Triggered
+	if (Test-Path -Path "HKLM:\SYSTEM\CurrentControlSet\Services\$($Service.Name)\TriggerInfo\") {
+		Set-Service -Name $Service.Name -StartupType Manual
+		continue
+	}
+
+	[PSCustomObject] @{
+		DisplayName = $Service.DisplayName
+		Name = $Service.Name
+		StartMode = $Service.StartMode
+		Status = $Service.State
+	}
+}
+
+$List | Out-GridView -Title "Services" -Wait
