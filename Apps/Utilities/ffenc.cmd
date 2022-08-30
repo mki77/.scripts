@@ -87,7 +87,7 @@ for %%f in ("*.m4a") do (
 goto :eof
 
 :setJpeg
-set AtomicParsley=jtag.exe
+set AtomicParsley=tag.exe
 for %%f in ("*.m4a") do (
 	%AtomicParsley% "%%f" --artwork "%%~nf.jpg" --overWrite
 rem %AtomicParsley% "%%f" --artwork REMOVE_ALL

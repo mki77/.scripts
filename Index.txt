@@ -10,7 +10,7 @@ TextPrediction
 \ Edge Classic \ Outdated
 Internet-Browser
 
-\ Internet Explorer \ Breaks Directx 9c web-setup, Photoshop CC and older apps
+\ Internet Explorer \ Breaks DirectX9c web-setup, Photoshop CC and older apps
 IE-Troubleshooters
 InternetExplorer
 
@@ -90,13 +90,13 @@ Virtualization-Remotefx-User-Mode-Transport
 \ Remote Differential Compression
 RDC
 
-\ System Restore
+\ System Restore \ Depends Windows Backup
 SystemRestore
 
 \ Windows Error Reporting
 ErrorReporting
 
-\ Windows Store
+\ Windows Store \ Depends Defender
 OneCore-UniversalStore
 
 \ Windows To Go
@@ -109,19 +109,11 @@ EnterpriseClientSync
 Backup
 BLB-Client
 
-\ Windows Defender \ Breaks Windows Update
-DeviceGuard
-GroupPolicy
-OneCoreUAP
-HVSI
-SenseClient
-ServicingStack
-
 \ Windows Firewall \ Breaks Wi-Fi setup
 Network-Security
 Networking-MPSSVC-Rules
 
-\ Windows Mixed Reality \ Breaks DWM.exe \ DO NOT REMOVE
+\ Windows Mixed Reality \ DO NOT REMOVE \ Breaks DWM.exe
 Composable-PlatformExtension
 Holographic
 PerceptionDriverClient
@@ -129,8 +121,15 @@ SpatialInteractionClient
 
 \ DO NOT REMOVE \ Breaks vital components
 AppServerClient
+DeviceGuard
+GroupPolicy
+HVSI
 ICM
+MobilePC
+OneCoreUAP
 SearchEngine
+SenseClient
 Sensors
+ServicingStack
 TabletPC
 TerminalServices

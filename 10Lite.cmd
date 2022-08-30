@@ -8,16 +8,17 @@ pushd "%~dp0"
 goto Init
 
 :Init
+mode con:cols=70 lines=35
 set "_=                   "
 set sleep=echo Press any key to continue...^&pause^>nul^&cls
 set strip=[7m %_%[ %~n0 //github.com/mki77 ]%_% [0m
 set strip=cls^&echo:^&echo:%strip%^&echo:^&echo:^&title %~n0
 set menu= ^
-1:RmApps:"Remove Windows apps":"Does not remove apps installed via Windows Store" ^
-2:RmPackages:"Remove Windows components":"This removal could be risky without a system backup" ^
-3:RmFod:"Remove Windows FODs (features on demand)":"Includes languages, NetFx3, PowerShell ISE and others" ^
-4:RmFeatures:"Disable optional features":"Any at once, does not remove DirectPlay and NetFx" ^
-5:FastBoot:"Enable fast boot and prefetching":"For older PCs without solid state drive" ^
+1:RmApps:"Remove Windows apps (fully)":"Does not remove apps installed from store" ^
+2:RmPackages:"Remove Windows components (preset)":"Removes hidden ones, risky to run without a backup" ^
+3:RmFod:"Remove Windows features (on demand)":"Removes languages, .NET, PS-ISE and other" ^
+4:RmFeatures:"Disable optional features (any at once)":"Does not remove DirectPlay and NetFx" ^
+5:FastBoot:"Tweaks for older PCs without SSD":"Enables fast boot, prefetching and more" ^
 0:Exit:"Bye now!"
 rem :CleanUp:"Remove Windows Update files (needs reboot)":"Free up space by cleaning the WinSxS folder" ^
 goto Screen
@@ -67,7 +68,7 @@ echo This removal can take a long time. Schedule shutdown? y/n
 choice /n /c:YN /m ">"
 set /a PowerOff=%ErrorLevel%
 cls &echo Removing packages...
-title %~n0: 0%%
+title 0%%
 
 :: Loops are written this way to get better execution speed, do not modify
 for /f %%p in (Packages.txt) do (for /f "tokens=*" %%a in ('REG query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages" /f "%%p" /k ^| find "-"') do (
@@ -83,9 +84,9 @@ for /f "tokens=2 delims=:" %%a in ('DISM /Online /Get-Packages') do (set _=%%a
 			DISM /Online /Remove-Package /PackageName:"!_:~1!" /NoRestart >nul && echo !_:~1!
 			set /a step+=1
 			set /a "progress=(!step!*100)/!steps!"
-			title %~n0: !progress!%%
+			title !progress!%%
 )))
-title %~n0: 100%%
+title 100%%
 
 >nul 2>&1 (
 	DISM /Online /Optimize-ProvisionedAppxPackages 
@@ -206,5 +207,93 @@ if "%SolidState%"=="y" (
 	fsutil behavior set DisableDeleteNotify 0
 	reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters" /v "EnableSuperfetch" /t REG_DWORD /d "0" /f
 )
+
+:: Enable Diagnostic on demand
+"DPS"
+"PcaSvc"
+"WdiServiceHost"
+"WdiSystemHost"
+"WerSvc"
+) do (
+sc config %%~s start=demand >nul
+)
+
+:: Disable Services
+for %%s in (
+"AxInstSV"
+"AeLookupSvc"
+"ALG"
+"CDPSvc"
+"DcpSvc"
+"diagnosticshub.standardcollector.service"
+"DiagTrack"
+"dmwappushservice"
+"DoSvc"
+"DsSvc"
+"ERSVC"
+"HomeGroupListener"
+"HomeGroupProvider"
+"iphlpsvc"
+"irmon"
+"lfsvc"
+"MapsBroker"
+"MessagingService"
+"MSiSCSI"
+"Netlogon"
+"NetTcpPortSharing"
+"OneSyncSvc"
+"PimIndexMaintenanceSvc"
+"PrintNotify"
+"RasAuto"
+"RasMan"
+"RemoteAccess"
+"RemoteRegistry"
+"RetailDemo"
+"RpcLocator"
+"SCPolicySvc"
+"SDRSVC"
+"SessionEnv"
+"shpamsvc"
+"SNMPTRAP"
+"Spooler"
+"TermService"
+"TokenBroker"
+"upnphost"
+"WaaSMedicSvc"
+"WbioSrvc"
+"Wecsvc"
+"WERSVC"
+"WinRM"
+"wscsvc"
+"WSearch"
+"wuauserv"
+) do (
+sc config %%~s start=disabled >nul && echo [Disable] %%~s
+)
+rem Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\*' | ? ImagePath -notmatch 'drivers' | ? ImagePath -match 'system32' | ? Start -eq 4 | Select PSChildName
+
+:: Disable Tasks
+for %%t in (
+"\Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser"
+"\Microsoft\Windows\Application Experience\ProgramDataUpdater"
+"\Microsoft\Windows\Customer Experience Improvement Program\Consolidator"
+"\Microsoft\Windows\Customer Experience Improvement Program\UsbCeip"
+"\Microsoft\Windows\DiskCleanup\SilentCleanup"
+"\Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDiagnosticDataCollector"
+"\Microsoft\Windows\InstallService\ScanForUpdates"
+"\Microsoft\Windows\InstallService\ScanForUpdatesAsUser"
+"\Microsoft\Windows\Maintenance\WinSAT"
+"\Microsoft\Windows\RecoveryEnvironment\VerifyWinRE"
+"\Microsoft\Windows\SettingSync\BackgroundUploadTask"
+"\Microsoft\Windows\SettingSync\NetworkStateChangeTask"
+"\Microsoft\Windows\SystemRestore\SR"
+"\Microsoft\Windows\Windows Defender\Windows Defender Scheduled Scan"
+"\Microsoft\Windows\Windows Error Reporting\QueueReporting"
+"\Microsoft\Windows\WindowsUpdate\Scheduled Start"
+) do (
+	schtasks /Change /TN %%t /Disable >nul 2>&1 && echo [Disabled] %%t
+)
+rem Get-ScheduledTask | ? State -eq Ready | Select TaskName, Description | Sort TaskName
+
 timeout /nobreak /t 2 >nul
 goto :eof
